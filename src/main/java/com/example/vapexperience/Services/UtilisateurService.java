@@ -35,8 +35,7 @@ public class UtilisateurService implements UtilisateurServiceInt {
     public boolean Login(String username, String password) {
         try {
             Users u = utilisateurRepository.findUser(username, password);
-            if (u == null) return false;
-            else return true;
+            return u != null;
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
